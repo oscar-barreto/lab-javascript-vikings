@@ -62,9 +62,36 @@ class War {
     }
 
     vikingAttack(){
+
+        const saxonRandomIndex = [Math.floor(Math.random()* this.saxonArmy.length)];
+
+        const saxonSoldier = this.saxonArmy[saxonRandomIndex];
+        const vikingSoldier = this.vikingArmy[Math.floor(Math.random()*this.vikingArmy.length)];
+
+        const battleResult = saxonSoldier.receiveDamage(vikingSoldier.strength);
+
+        if(saxonSoldier.health <= 0){
+            this.saxonArmy.splice(saxonRandomIndex,1);
+            return battleResult;
+        } else {
+            return battleResult;
+        }
     }
 
     saxonAttack(){
+        const vikingRandomIndex = [Math.floor(Math.random()* this.vikingArmy.length)];
+
+        const vikingSoldier = this.vikingArmy[vikingRandomIndex];
+        const saxonSoldier = this.saxonArmy[Math.floor(Math.random()*this.saxonArmy.length)];
+
+        const battleResult = vikingSoldier.receiveDamage(saxonSoldier.strength);
+
+        if(vikingSoldier.health <= 0){
+            this.vikingArmy.splice(vikingRandomIndex,1);
+            return battleResult;
+        } else {
+            return battleResult;
+        }
     }
 
 
