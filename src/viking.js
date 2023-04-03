@@ -62,7 +62,6 @@ class War {
     }
 
     vikingAttack(){
-       
     }
 
     saxonAttack(){
